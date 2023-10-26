@@ -2,12 +2,19 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
+import { useNavigate } from 'react-router-dom'
 
 export default function Notes(props) {
     const context = useContext(noteContext)
+    let navigate = useNavigate();
     const { notes, getNotes,editNote } = context
     useEffect(() => {
-        getNotes()
+        if (localStorage.getItem('token')){
+            getNotes()
+        }
+        else{
+            navigate("/login");
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -50,7 +57,7 @@ export default function Notes(props) {
                         <div className="modal-body">
                             <form>
                                 <div className="form-group">
-                                    <label htmlFor="title">Ttile</label>
+                                    <label htmlFor="title">Title</label>
                                     <input type="text" className="form-control" id="title" value={note.etitle} name='etitle' aria-describedby="emailHelp" placeholder="Enter Title" onChange={handleChange} minLength={5} required/>
                                 </div>
                                 <div className="form-group">
@@ -71,7 +78,7 @@ export default function Notes(props) {
                 </div>
             </div>
 
-            <h1 className='my-2'>Your Notes</h1>
+            <h1 className='my-2 ' style={{textAlign:'center',color:'red',fontFamily:'fantasy'}}>Your Notes</h1>
             <div className="row my-3">
                 <div className="container mx-2" style={{color:"red"}}>
                 {notes.length === 0 && 'No notes to display'}

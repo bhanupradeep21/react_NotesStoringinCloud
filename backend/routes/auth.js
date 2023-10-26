@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fetchUser = require('../middleware/fetchUser');
-const JWT_SECRET = "bhanu@123"
+const JWT_SECRET = "anykey"
 
 // Route 1 -->create user/signup endpoint
 

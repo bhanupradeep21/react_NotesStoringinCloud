@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import Contact from './components/contact';
 import NoteState from './context/notes/NoteState';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { useState } from 'react';
 import Alert from './components/Alert';
+import Initial from './components/Initial'
+import ContactUs from './components/ContactUs';
+
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -29,9 +31,10 @@ function App() {
           <Alert alert={alert} />
           <div className='container'>
             <Routes>
+              <Route path='/' element={<Initial/>} />
               <Route path="/home" element={<Home showAlert={showAlert} />} />
               <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<ContactUs />} />
               <Route path='/login' element={<Login showAlert={showAlert} />} />
               <Route path='/signup' element={<Signup showAlert={showAlert} />} />
             </Routes>

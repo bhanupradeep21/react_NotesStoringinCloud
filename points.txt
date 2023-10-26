@@ -1,8 +1,4 @@
-{
-  "name":"bhanu",
-  "email":"bhanukari572@gmail.com",
-  "password":"bhanu123"
-}
+
 
 
 ERROR WHEN TRYING TO MAKE A REQUEST FROM FRONTEND TO BANKEND API CALL :

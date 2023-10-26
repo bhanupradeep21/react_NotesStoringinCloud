@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = "mongodb+srv://user:8247717764@cluster0.iqqwu9y.mongodb.net/iNotebook";
+const mongoUri = "your mongo uri";
 const connectToMongo = ()=>{
     mongoose.connect(mongoUri, {
         useNewUrlParser: true,
