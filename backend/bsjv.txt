@@ -1,0 +1,13 @@
+    let user = await User.findOne({email:req.body.email})
+    if (user){
+        return res.status(400).json({error:"sorry user  already exists"})
+    }
+     user = await User.create({
+        name:req.body.name,
+        email:req.body.email,
+        password:req.body.password
+    })
+
+
+    ,
+    "start":"nodemon index.js"

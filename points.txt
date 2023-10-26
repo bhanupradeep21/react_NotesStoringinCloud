@@ -1,0 +1,17 @@
+{
+  "name":"bhanu",
+  "email":"bhanukari572@gmail.com",
+  "password":"bhanu123"
+}
+
+
+ERROR WHEN TRYING TO MAKE A REQUEST FROM FRONTEND TO BANKEND API CALL :
+---------------------------------------------------------------------
+
+The error you're seeing is due to the Cross-Origin Resource Sharing (CORS) policy, which is a security feature implemented by browsers to prevent requests to different origins (domains, protocols, or ports) unless they're explicitly allowed by the server.
+
+Here's what's happening:
+
+Your frontend application running on http://localhost:3000 is trying to make a request to your backend API on http://localhost:5000.
+The browser checks for CORS headers in the response from the backend.
+Since the response doesn't include the necessary CORS headers allowing the request, the browser blocks the request.
